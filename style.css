@@ -1,5 +1,5 @@
 * {
-  background-color:lightgray;
+  
 }
 
 li {
@@ -8,6 +8,7 @@ li {
   font-weight: normal;
   background-color: white;
   text-indent: 1em;
+  
 }
 
 ul {
@@ -20,6 +21,8 @@ ul {
   background-color: white;
   box-shadow: 5px 5px 10px darkcyan;
   margin:20px;
+  
+  
 }
 
 #lib-message{
@@ -28,4 +31,18 @@ ul {
   display:flex;
   flex-direction:row;
   justify-content: space-evenly;
+}
+
+#full-library {
+  display: grid;
+  gap:4px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+  background-color:lightgray;
+  /* height: 50vh; */
+}
+
+#new-book{
+  background-color: gainsboro;
+  
 }

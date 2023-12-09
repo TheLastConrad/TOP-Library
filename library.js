@@ -19,7 +19,121 @@ function addBookToLibrary(a,b,c,d) {
   // do stuff here
 }
 
+//grab new book div
+let newBook = document.getElementById('new-book');
 
+function drawNewBookMakerModal() {
+  let newBookForm = document.createElement('form');
+  newBookForm.setAttribute('id', 'new-book-form');
+  newBookForm.setAttribute('method', 'post');
+
+
+  let titleLabel = document.createElement('label');
+  titleLabel.textContent = 'Title: ';
+  titleLabel.setAttribute('for', 'title');
+
+  let titleInput = document.createElement('input');
+  titleInput.setAttribute('type', 'text');
+  titleInput.setAttribute('name', 'new-book-title');
+  titleInput.setAttribute('id', 'title');
+    
+
+  let authorLabel = document.createElement('label');
+  authorLabel.textContent = 'Author: ';
+  authorLabel.setAttribute('for', 'author');
+
+  let authorInput = document.createElement('input');
+  authorInput.setAttribute('type', 'text');
+  authorInput.setAttribute('name', 'new-book-author');
+  authorInput.setAttribute('id', 'author');
+
+    
+
+  let numOfPagesLabel = document.createElement('label');
+  numOfPagesLabel.textContent = 'Number of Pages: ';
+  numOfPagesLabel.setAttribute('for', 'numOfPages');
+
+  let numOfPagesInput = document.createElement('input');
+  numOfPagesInput.setAttribute('type', 'numOfPages');
+  numOfPagesInput.setAttribute('name', 'new-book-numOfPages');
+  numOfPagesInput.setAttribute('id', 'numOfPages');
+
+    
+
+  let readLabel = document.createElement('label');
+  readLabel.textContent = 'Have you read this yet?: ';
+  readLabel.setAttribute('for', 'read');
+
+  let readInput = document.createElement('input');
+  readInput.setAttribute('type', 'checkbox');
+  readInput.setAttribute('name', 'new-book-read');
+  readInput.setAttribute('id', 'read');
+
+  let submitButton = document.createElement('button');
+  submitButton.textContent = 'Submit New Book';
+  submitButton.setAttribute('type', 'submit');
+  submitButton.setAttribute('onclick', 'newBookSubmit()');
+  submitButton.setAttribute('id', 'new-book-submit');
+
+
+  newBookForm.appendChild(titleLabel);
+  newBookForm.appendChild(titleInput);
+  newBookForm.appendChild(authorLabel);
+  newBookForm.appendChild(authorInput);
+  newBookForm.appendChild(numOfPagesLabel);
+  newBookForm.appendChild(numOfPagesInput);
+  newBookForm.appendChild(readLabel);
+  newBookForm.appendChild(readInput);
+  newBookForm.appendChild(submitButton);
+
+  // put the form in the the new-book div
+  newBook.appendChild(newBookForm);
+
+
+  // replace the Submit it here! button with a collapse modal button
+  subInRemoveNewBookMakerModalButton()
+}
+
+
+let newBookMakerModalSubmitHereButton = document.createElement('button');
+newBookMakerModalSubmitHereButton.setAttribute('onclick', 'drawNewBookMakerModal()');
+newBookMakerModalSubmitHereButton.setAttribute('id', 'draw-new-book-maker-modal');
+newBookMakerModalSubmitHereButton.textContent = "Submit it here!";
+
+
+let removeNewBookMakerModalButton = document.createElement('button');
+removeNewBookMakerModalButton.setAttribute('onclick', 'removeNewBookMakerModal()');
+removeNewBookMakerModalButton.setAttribute('id', 'remove-new-book-maker-modal');
+removeNewBookMakerModalButton.textContent = "<Collapse New Book Modal>";
+
+function subInNewBookMakerModalSubmitHereButton(){
+
+  // runs when newBookMakerModalSubmitHereButton is pressed. Subs in new Book Maker
+  askNewBook.replaceChild(newBookMakerModalSubmitHereButton, document.getElementById('remove-new-book-maker-modal'));
+
+}
+
+let askNewBook = document.getElementById('ask-new-book');
+
+function subInRemoveNewBookMakerModalButton(){
+
+  // subs out newBookMakerModalSubmitHereButton and subs in removeNewBookMakerModalButton
+
+  let theOldNBMMButton = document.getElementById('draw-new-book-maker-modal');
+
+  askNewBook.replaceChild(removeNewBookMakerModalButton, theOldNBMMButton);
+  
+
+
+
+
+}
+
+
+function removeNewBookMakerModal(){
+  newBook.removeChild(document.getElementById('new-book-form'));
+  subInNewBookMakerModalSubmitHereButton();
+}
 
 function testLibrary(){
   addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false);
@@ -180,11 +294,11 @@ function changeBookRead(book) {
 }
 
 
-// function newBookSubmit() {
+function newBookSubmit() {
 
-//   // alert('yep. this button is working');
+  alert('yep. this button is working');
 
 
-//   // let newBook = new Book(title, author, numOfPages, read)
-//   addBookToLibrary(title, author, numOfPages, read);
-// }
+  // // let newBook = new Book(title, author, numOfPages, read)
+  // addBookToLibrary(title, author, numOfPages, read);
+}
