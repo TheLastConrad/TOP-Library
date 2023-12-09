@@ -1,0 +1,31 @@
+* {
+  background-color:lightgray;
+}
+
+li {
+  list-style-type: none;
+  font-style: italic;
+  font-weight: normal;
+  background-color: white;
+  text-indent: 1em;
+}
+
+ul {
+  font-weight: bold;
+  background-color: white;
+}
+
+.book {
+  display: grid;
+  background-color: white;
+  box-shadow: 5px 5px 10px darkcyan;
+  margin:20px;
+}
+
+#lib-message{
+  background-color: darkcyan;
+
+  display:flex;
+  flex-direction:row;
+  justify-content: space-evenly;
+}

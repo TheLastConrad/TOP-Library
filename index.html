@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  
+  <title>TOP | Library</title>
+</head>
+<body>
+  <header>
+    <p class="welcome">Howdy!</p>
+    
+  </header>
+
+  <div class="new-book">Got a new book? Submit it here! [in progress]
+    <form id="new-book-form" action="" method="post">
+
+      <label for="title">Title: </label>
+      <input type="text" name="new-book-title" id="title">
+
+      <label for="author">Author: </label>
+      <input type="text" name="new-book-author" id="author">
+
+      <label for="numOfPages">Number of Pages: </label>
+      <input type="text" name="new-book-numOfPages" id="numOfPages">
+
+      <label for="read">Have you read this yet?: </label>
+      <input type="checkbox" name="new-book-read" id="read">
+
+      <button type="submit" id="new-book-submit" onclick="newBookSubmit()" >Submit New Book</button>
+      
+    </form>
+  </div>
+  <div id="lib-div">
+    <div id="lib-message">
+      <p>Here are some books</p>
+      <p>count: </p>
+    </div>
+  </div>
+  <div id="full-library">
+     
+
+    </div>
+  </div>
+
+
+  
+
+  <footer></footer>
+  <script src="library.js"></script>
+  
+</body>
+</html>
